@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: date-icon;
+	src: url(font/iconfont.eot);
+	src: url(font/iconfont.eot#iefix) format('embedded-opentype'), url(font/iconfont.svg#iconfont) format('svg'), url(font/iconfont.woff) format('woff'), url(font/iconfont.ttf) format('truetype');
+}
+
+.date-wrap{
+	position: relative;
+}
+
+.ui-date{
+	display: none;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 272px;
+	border: 1px solid #d2d2d2;
+	border-radius: 2px;
+	font-size: 14px;
+	opacity: .2;
+	transition: top .2s ease-in, opacity .2s ease-in;
+	-webkit-transition: top .2s ease-in, opacity .2s ease-in;
+}
+
+.no-select{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ui-date.show{
+	display: block;
+}
+
+.ui-date.animation{
+	top: 30px;
+	opacity: 1;
+}
+
+.ui-date *{ box-sizing: border-box; }
+
+.ui-date .date-header{
+	position: relative;
+	padding: 8px 70px 8px;
+	border-bottom: 1px solid #e2e2e2;
+	line-height: 30px;
+}
+
+.ui-date .date-header i{
+	position: absolute;
+    top: 8px;
+    color: #999;
+    font-size: 18px;
+}
+
+.ui-date .date-header .date-prev-y{
+	left: 15px;
+}
+
+.ui-date .date-header .date-prev-m{
+	left: 45px;
+}
+
+.ui-date .date-header .date-next-m{
+	right: 45px;
+}
+
+.ui-date .date-header .date-next-y{
+	right: 15px;
+}
+
+.ui-date .date-header .date-set-ym{
+	width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ui-date .date-header .date-set-ym span{
+	padding: 0 5px;
+}
+
+.ui-date .date-header i:hover, .ui-date .date-header span:hover {
+    color: #5FB878;
+    cursor: pointer;
+}
+
+.ui-date .date-content {
+    position: relative;
+    padding: 10px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.ui-date .date-content table{
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.ui-date .date-content td,
+.ui-date .date-content th{
+    width: 36px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.ui-date .date-content th{
+	font-weight: 400;
+    color: #333;
+}
+
+.ui-date .date-content td{
+	color: #666;
+	cursor: pointer;
+}
+
+.ui-date .date-content td.prev,
+.ui-date .date-content td.next{
+	color: #d2d2d2;
+}
+
+.ui-date .date-content td:hover{
+	background-color: #eaeaea;
+    color: #333;
+}
+
+.ui-date .date-content td.active{
+    background-color: #009688!important;
+    color: #fff!important;
+}
+
+.ui-date .date-footer{
+	position: relative;
+    height: 46px;
+    line-height: 26px;
+    padding: 10px 20px;
+    border-top: 1px solid #e2e2e2;
+}
+
+.ui-date .date-footer .date-btns{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+.ui-date .date-footer .date-btns span{
+	display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    margin: 0 0 0 -1px;
+    padding: 0 10px;
+    border: 1px solid #C9C9C9;
+    background-color: #fff;
+    white-space: nowrap;
+    vertical-align: top;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.ui-date .date-footer .date-btns span:hover{
+	color: #5FB878;
+}
+
+.date-icon{
+	font-family: date-icon!important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
