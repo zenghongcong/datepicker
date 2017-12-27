@@ -119,10 +119,10 @@
 			this.parent.querySelector('.date-set-ym .y').innerHTML = this.options.year + '年';
 			this.parent.querySelector('.date-set-ym .m').innerHTML = this.options.month + '月';
 			this.parent.querySelector('tbody').innerHTML = _this.options.list;
-			document.querySelectorAll('table td').forEach(function(item){
+			this.parent.querySelectorAll('table td').forEach(function(item){
 				item.addEventListener('click', function(e){
 					var date = this.dataset.date;
-					document.querySelector('table td.active').classList.remove('active');
+					_this.parent.querySelector('table td.active').classList.remove('active');
 					this.classList.add('active');
 					_this.setDate(date);
 					_this.clearCalendar()();
@@ -179,16 +179,19 @@
 			options.day = Number(dateArr[2]);
 		},
 		//清空选中日期
-		clearDate: function(){
+		clearDate: function(flag){
 			var options = this.options;
 			
 			this.elem.value = '';
+			options.year = '';
+			options.month = '';
+			options.day = '';
 		},
 		//生成日期弹框
 		renderCalendar: function(){
 			var _this = this;
 			return function(){
-				var picker = document.querySelector('.ui-date');
+				var picker = _this.parent.querySelector('.ui-date');
 				
 				if(_this.options.show){ return }
 				
@@ -232,37 +235,37 @@
 							'</div>';
 					
 					picker.innerHTML = innerHtml;
-					document.querySelector('.date-wrap').appendChild(picker);
+					_this.parent.appendChild(picker);
 					
-					document.querySelector('.date-prev-y').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-prev-y').addEventListener('click', function(e){
 						_this.prevYear();
 					})
 					
-					document.querySelector('.date-prev-m').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-prev-m').addEventListener('click', function(e){
 						_this.prevMonth();
 					})
 					
-					document.querySelector('.date-next-y').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-next-y').addEventListener('click', function(e){
 						_this.nextYear();
 					})
 					
-					document.querySelector('.date-next-m').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-next-m').addEventListener('click', function(e){
 						_this.nextMonth();
 					})
 					
-					document.querySelector('.date-btn-clear').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-btn-clear').addEventListener('click', function(e){
 						_this.clearDate();
 						_this.clearCalendar()();
 					});
 					
-					document.querySelector('.date-btn-now').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-btn-now').addEventListener('click', function(e){
 						_this.clearDate();
 						_this.getDateAndList();
 						_this.setDate();
 						_this.clearCalendar()();
 					});
 					
-					document.querySelector('.date-btn-confirm').addEventListener('click', function(e){
+					_this.parent.querySelector('.date-btn-confirm').addEventListener('click', function(e){
 						_this.setDate();
 						_this.clearCalendar()();
 					});
@@ -283,7 +286,7 @@
 			return function(){
 				if(!_this.options.show){ return }
 				_this.options.show = !_this.options.show;
-				document.querySelector('.ui-date').classList.remove('show', 'animation');
+				_this.parent.querySelector('.ui-date').classList.remove('show', 'animation');
 			}
 		},
 		//绑定触发事件
