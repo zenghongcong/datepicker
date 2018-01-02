@@ -10,6 +10,24 @@
 		return elem;
 	}
 	
+	//删除class
+	function removeClass(el, className){
+		if (el.classList){
+  			el.classList.remove(className);
+  		}else{
+  			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+		}
+  	}
+	
+	//添加class
+	function addClass(el, className){
+		if (el.classList){
+			el.classList.add(className);
+		}else{
+			el.className += ' ' + className;
+		}
+	}
+	
 	//停止冒泡
 	function stopBubble(e){
 		e = e || win.event;
@@ -122,8 +140,8 @@
 			this.parent.querySelectorAll('table td').forEach(function(item){
 				item.addEventListener('click', function(e){
 					var date = this.dataset.date;
-					_this.parent.querySelector('table td.active').classList.remove('active');
-					this.classList.add('active');
+					removeClass(_this.parent.querySelector('table td.active'), 'active');
+					addClass(this, 'active');
 					_this.setDate(date);
 					_this.clearCalendar()();
 				})
@@ -272,9 +290,9 @@
 				}
 				
 				_this.options.show = !_this.options.show;
-				picker.classList.add('show');
+				addClass(picker, 'show');
 				setTimeout(function(){
-					picker.classList.add('animation');
+					addClass(picker, 'animation');
 				});
 				
 				_this.insertDataToDom();
@@ -286,7 +304,8 @@
 			return function(){
 				if(!_this.options.show){ return }
 				_this.options.show = !_this.options.show;
-				_this.parent.querySelector('.ui-date').classList.remove('show', 'animation');
+				removeClass(_this.parent.querySelector('.ui-date'), 'show');
+				removeClass(_this.parent.querySelector('.ui-date'), 'animation');
 			}
 		},
 		//绑定触发事件
