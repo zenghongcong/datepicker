@@ -38,23 +38,9 @@
 		}
 	}
 	
-	//是否为闰年
-	function isLeapYear(year){
-		return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-	}
-	
 	//计算一个月有多少天
 	function getDayOfMonth(year, month){
-		var dayNums = 0;
-		
-		if(month == 2){
-			dayNums = isLeapYear(year) ? 29 : 28;
-		}else{
-			//小于8的奇大偶小，大于等于8的偶大奇小
-			dayNums = month < 8 ? (month % 2 == 1 ? 31 : 30) : (month % 2 == 1 ? 30 : 31);
-		}
-		
-		return dayNums;
+		return new Date(year, month, 0).getDate();
 	}
 	
 	//获取日期列表dom string
