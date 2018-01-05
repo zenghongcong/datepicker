@@ -123,7 +123,7 @@
 			this.parent.querySelector('.date-set-ym .y').innerHTML = this.options.year + '年';
 			this.parent.querySelector('.date-set-ym .m').innerHTML = this.options.month + '月';
 			this.parent.querySelector('tbody').innerHTML = _this.options.list;
-			this.parent.querySelectorAll('table td').forEach(function(item){
+			Array.prototype.forEach.call(this.parent.querySelectorAll('table td'), function(item){
 				item.addEventListener('click', function(e){
 					var date = this.dataset.date;
 					removeClass(_this.parent.querySelector('table td.active'), 'active');
