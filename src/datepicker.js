@@ -38,6 +38,13 @@
 		}
 	}
 	
+	//解决ie9以下innerHtml不可用
+	function setTBodyInnerHTML(tbody, html) { 
+		var div = document.createElement('div') 
+		div.innerHTML = '<table>' + html + '</table>'
+		tbody.parentNode.replaceChild(div.firstChild.firstChild, tbody) 
+	}
+	
 	//计算一个月有多少天
 	function getDayOfMonth(year, month){
 		return new Date(year, month, 0).getDate();
@@ -122,10 +129,14 @@
 			this.getDateAndList();
 			this.parent.querySelector('.date-set-ym .y').innerHTML = this.options.year + '年';
 			this.parent.querySelector('.date-set-ym .m').innerHTML = this.options.month + '月';
-			this.parent.querySelector('tbody').innerHTML = _this.options.list;
+			try{
+				this.parent.querySelector('tbody').innerHTML = _this.options.list;
+			}catch(e){
+				setTBodyInnerHTML(this.parent.querySelector('tbody'), _this.options.list);
+			};
 			Array.prototype.forEach.call(this.parent.querySelectorAll('table td'), function(item){
 				item.addEventListener('click', function(e){
-					var date = this.dataset.date;
+					var date = (this.dataset && this.dataset.date) || this.getAttribute('data-date');
 					removeClass(_this.parent.querySelector('table td.active'), 'active');
 					addClass(this, 'active');
 					_this.setDate(date);
