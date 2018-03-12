@@ -309,7 +309,7 @@
 		bindEvent: function(){
 			var _this = this;
 			
-			_this.parent.addEventListener('click', stopBubble)
+			_this.parent.addEventListener('click', stopBubble);
 			
 			_this.elem.addEventListener('focus', _this.renderCalendar());
 			
