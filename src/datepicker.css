@@ -26,11 +26,11 @@
 
 .no-select{
 	-webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .ui-date.show{
@@ -53,9 +53,9 @@
 
 .ui-date .date-header i{
 	position: absolute;
-    top: 8px;
-    color: #999;
-    font-size: 18px;
+	top: 8px;
+	color: #999;
+	font-size: 18px;
 }
 
 .ui-date .date-header .date-prev-y{
@@ -76,44 +76,44 @@
 
 .ui-date .date-header .date-set-ym{
 	width: 100%;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .ui-date .date-header .date-set-ym span{
 	padding: 0 5px;
 }
 
 .ui-date .date-header i:hover, .ui-date .date-header span:hover {
-    color: #5FB878;
-    cursor: pointer;
+	color: #5FB878;
+	cursor: pointer;
 }
 
 .ui-date .date-content {
-    position: relative;
-    padding: 10px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+	position: relative;
+	padding: 10px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .ui-date .date-content table{
 	border-collapse: collapse;
-    border-spacing: 0;
+	border-spacing: 0;
 }
 
 .ui-date .date-content td,
 .ui-date .date-content th{
-    width: 36px;
-    height: 30px;
-    padding: 5px;
-    text-align: center;
+	width: 36px;
+	height: 30px;
+	padding: 5px;
+	text-align: center;
 }
 
 .ui-date .date-content th{
 	font-weight: 400;
-    color: #333;
+	color: #333;
 }
 
 .ui-date .date-content td{
@@ -128,20 +128,20 @@
 
 .ui-date .date-content td:hover{
 	background-color: #eaeaea;
-    color: #333;
+	color: #333;
 }
 
 .ui-date .date-content td.active{
-    background-color: #009688!important;
-    color: #fff!important;
+	background-color: #009688!important;
+	color: #fff!important;
 }
 
 .ui-date .date-footer{
 	position: relative;
-    height: 46px;
-    line-height: 26px;
-    padding: 10px 20px;
-    border-top: 1px solid #e2e2e2;
+	height: 46px;
+	line-height: 26px;
+	padding: 10px 20px;
+	border-top: 1px solid #e2e2e2;
 }
 
 .ui-date .date-footer .date-btns{
@@ -152,17 +152,17 @@
 
 .ui-date .date-footer .date-btns span{
 	display: inline-block;
-    height: 26px;
-    line-height: 26px;
-    margin: 0 0 0 -1px;
-    padding: 0 10px;
-    border: 1px solid #C9C9C9;
-    background-color: #fff;
-    white-space: nowrap;
-    vertical-align: top;
-    border-radius: 2px;
-    cursor: pointer;
-    font-size: 12px;
+	height: 26px;
+	line-height: 26px;
+	margin: 0 0 0 -1px;
+	padding: 0 10px;
+	border: 1px solid #C9C9C9;
+	background-color: #fff;
+	white-space: nowrap;
+	vertical-align: top;
+	border-radius: 2px;
+	cursor: pointer;
+	font-size: 12px;
 }
 
 .ui-date .date-footer .date-btns span:hover{

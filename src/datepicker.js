@@ -13,11 +13,11 @@
 	//删除class
 	function removeClass(el, className){
 		if (el.classList){
-  			el.classList.remove(className);
-  		}else{
-  			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+			el.classList.remove(className);
+		}else{
+			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 		}
-  	}
+	}
 	
 	//添加class
 	function addClass(el, className){
@@ -32,17 +32,17 @@
 	function stopBubble(e){
 		e = e || win.event;
 		if(e.stopPropagation) {
-		    e.stopPropagation();
+			e.stopPropagation();
 		} else {
-		    e.cancelBubble = true;
+			e.cancelBubble = true;
 		}
 	}
 	
 	//解决ie9以下innerHtml不可用
 	function setTBodyInnerHTML(tbody, html) { 
-		var div = document.createElement('div') 
-		div.innerHTML = '<table>' + html + '</table>'
-		tbody.parentNode.replaceChild(div.firstChild.firstChild, tbody) 
+		var div = document.createElement('div');
+		div.innerHTML = '<table>' + html + '</table>';
+		tbody.parentNode.replaceChild(div.firstChild.firstChild, tbody);
 	}
 	
 	//计算一个月有多少天
